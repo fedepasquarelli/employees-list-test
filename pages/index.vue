@@ -9,10 +9,10 @@
 					<new-user></new-user>
 					<b-table striped outlined :busy="loading" :items="users" :fields="fields">
 						<template v-slot:cell(actions)="data">
-							<button variant="outline-success" size="sm" @click="openEditModal(data.item.id)">Edit</button>
+							<b-button variant="outline-primary" size="sm" @click="openEditModal(data.item.id)">See</b-button>
 						</template>
 						<template v-slot:table-busy>
-							<div class="text-center text-danger my-2">
+							<div class="text-center text-primary my-2">
 								<b-spinner class="align-middle"></b-spinner>
 							</div>
 						</template>

@@ -38,11 +38,12 @@
             <b-button variant="outline-danger" size="sm" @click="deleteEntry()">Delete</b-button>
             <b-button variant="outline-primary" size="sm" @click="$emit('hideModal')">Cancel</b-button>
         </b-form>
-        <div class="d-block text-center text-danger my-2" v-else-if="modalLoading && !cbMessage">
+        <div class="d-block text-center text-primary my-2" v-else-if="modalLoading && !cbMessage">
             <b-spinner class="align-middle"></b-spinner>
         </div>
         <div class="text-center" v-else>
             <h3>{{cbMessage}}</h3>
+            <b-button variant="outline-primary" size="sm" @click="$emit('hideModal')">Cancel</b-button>
         </div>
     </b-modal>
 </template>

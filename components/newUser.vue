@@ -37,13 +37,14 @@
                 ></b-form-input>
             </b-form-group>
             <b-button variant="outline-success" size="sm" type="submit">Save</b-button>
-            <b-button variant="outline-primary" size="sm" @click="this.$refs['modal-new'].hide()">Cancel</b-button>
+            <b-button variant="outline-primary" size="sm" @click="hideModal">Cancel</b-button>
         </b-form>
-        <div class="d-block text-center text-danger my-2" v-else-if="modalLoading && !cbMessage">
+        <div class="d-block text-center text-primary my-2" v-else-if="modalLoading && !cbMessage">
             <b-spinner class="align-middle"></b-spinner>
         </div>
         <div class="text-center" v-else>
             <h3>{{cbMessage}}</h3>
+            <b-button variant="outline-primary" size="sm" @click="hideModal">Close</b-button>
         </div>
     </b-modal>
 </div>
@@ -86,6 +87,9 @@ export default {
                 console.log(err)
                 this.modalLoading = false;
             })
+        },
+        hideModal() {
+            this.$refs['modal-new'].hide();
         }
     }
 }
