@@ -4,7 +4,10 @@ export default {
     async getUserList({commit}) {
         // loading on
         commit('SET_LOADING', true)
-        await this.$axios.get(process.env.apiWpUrl + 'employees')
+        await this.$axios({
+            url: process.env.apiWpUrl + 'employees',
+            method: 'get'
+        })
         .then((res) => {
             // set the response in the store
             commit('SET_USERS_LIST', res.data)
