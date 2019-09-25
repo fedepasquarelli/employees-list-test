@@ -22,11 +22,12 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: false,
   /*
   ** Global CSS
   */
   css: [
+    {src: "~/assets/main.scss", lang: 'scss'}
   ],
   /*
   ** Plugins to load before mounting the App

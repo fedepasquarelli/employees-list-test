@@ -10,7 +10,8 @@ export default {
         })
         .then((res) => {
             // set the response in the store
-            commit('SET_USERS_LIST', res.data)
+            // result of > 1000 results, neet to limit the results for performance issues
+            commit('SET_USERS_LIST', res.data.slice(0, 200))
             // loading off
             commit('SET_LOADING', false)
         }).catch((err) => {
